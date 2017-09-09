@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a61ed6a2-c9c4-4f3f-84c3-8b1ddd0e0f63">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tanggalHariIni" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT tb_barang.kd_barang, tb_barang.nama,tb_jenis.jenis_barang,tb_detail_barang.detail_jenis,tb_detail_barang.harga_barang,tb_barang.stok, tb_supplier.nama AS nama_supplier
+FROM tb_barang, tb_supplier, tb_jenis, tb_detail_barang
+WHERE tb_barang.kd_barang = tb_detail_barang.kd_barang AND tb_barang.no_jenis = tb_jenis.no_jenis AND tb_supplier.kode_supplier = tb_barang.kode_supplier]]>
+	</queryString>
+	<field name="kd_barang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jenis_barang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="detail_jenis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga_barang" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stok" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_supplier" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="119" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="119" forecolor="#6699FF" backcolor="#6699FF" uuid="91df7fb5-04c5-403c-b024-2dd2c45f0697"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="119" y="30" width="436" height="34" forecolor="#FFFFFF" uuid="5cafc8c0-0708-4163-9033-1f6a28bb587b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CV Pusat Dakwah Visual (PUSDAV)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="65" width="436" height="34" forecolor="#FFFFFF" uuid="7211152e-8640-4a40-ac52-ff1070dd29c8"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Dialog" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jln. Diponegoro No. 63, Cihaurgeulis, Cibeunying Kaler, Bandung 40112]]></text>
+			</staticText>
+			<image>
+				<reportElement x="14" y="15" width="90" height="90" uuid="e7880849-6701-48b0-8dd4-80374fc2b209"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="1" width="555" height="42" uuid="93506e97-85c8-43b4-869e-fd0af7f7e19a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN BARANG]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="71" y="43" width="116" height="31" uuid="2476d3ab-efb2-4d54-9fe2-26f0085acef8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tanggalHariIni}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="43" width="71" height="31" uuid="9f3ac544-14a0-4a80-97a1-ef80b273570b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cetak          :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<rectangle>
+				<reportElement x="85" y="0" width="76" height="31" uuid="0aa320ad-c71f-45c5-b7bb-99d285010a7e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="161" y="0" width="97" height="31" uuid="cdaa295b-a37a-448c-a904-c3ef4377486d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="258" y="0" width="70" height="31" uuid="5dff63f4-167d-4f85-a409-561186442f80"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="328" y="0" width="104" height="31" uuid="0b68d6a0-9b18-49f2-8445-909932ca719e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="161" y="0" width="97" height="31" uuid="2c3d4e21-bd4c-4ab6-a47e-d765a9730e8f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="258" y="0" width="70" height="31" uuid="b0ed977b-76d6-4d72-a9ae-14b0af433189"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jenis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="0" width="104" height="31" uuid="1272bfdb-1fb2-4b59-b987-d04ba0b76fd2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Detail Jenis]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="461" y="0" width="94" height="31" uuid="3d1ca837-22f4-4076-97f9-f44782b91bfc"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="461" y="0" width="94" height="31" uuid="27e42c31-f4ab-47fd-b6b6-2b8f807b67ec"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="0" width="76" height="31" uuid="f61b4ddf-1a08-4344-832c-23a1aa7e0fd9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Barang]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="432" y="0" width="29" height="31" uuid="bb413341-e26a-489d-a79d-72068e825d79"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="432" y="0" width="29" height="31" uuid="c443c14d-f3bf-419c-8105-153b3fd75d3d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stok]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="0" width="85" height="31" uuid="c9813943-3ad3-4e68-b854-ab0694b19c1c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="85" height="31" uuid="79e59b97-5537-442c-a635-17aafcc839ca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="85" y="0" width="76" height="20" uuid="c984d457-397f-4f59-8890-987117a038be"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="161" y="0" width="97" height="20" uuid="306d97a7-9505-454c-999b-c6185e2021f7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="258" y="0" width="70" height="20" uuid="8dab83cd-88fb-41a7-b65f-c3460b1481bf"/>
+			</rectangle>
+			<textField>
+				<reportElement x="161" y="0" width="97" height="20" uuid="bac303b7-8518-4845-9ce2-ed77759052e3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="328" y="0" width="104" height="20" uuid="805cdd29-1536-448e-8da2-16f67d6013b4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="461" y="0" width="94" height="20" uuid="1e2f3b34-7baf-49c4-941c-dd931354727f"/>
+			</rectangle>
+			<textField>
+				<reportElement x="258" y="0" width="70" height="20" uuid="d7ddc635-6dff-43f8-ae3e-1e6b4465e695"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jenis_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="328" y="0" width="104" height="20" uuid="6d47bf03-641b-4822-bd3a-35dd406361cc"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detail_jenis}]]></textFieldExpression>
+			</textField>
+			<textField pattern="Rp #,##0.00">
+				<reportElement x="461" y="0" width="94" height="20" uuid="9d082e53-ee5e-427c-a0c7-280592561c1f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{harga_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="85" y="0" width="76" height="20" uuid="510286cb-0ccc-42a1-8459-e5f5371da1e7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kd_barang}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="432" y="0" width="29" height="20" uuid="a5eb5152-73ab-4f1d-ac7d-c85653b5141a"/>
+			</rectangle>
+			<textField>
+				<reportElement x="432" y="0" width="29" height="20" uuid="6c017bb6-1193-43d5-82c4-609f00106bde"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stok}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="0" width="85" height="20" uuid="d35c3de0-5ae3-47ee-b38a-0fff8acd80f2"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="85" height="20" uuid="836df1cf-b8d7-4b3a-8f15-72e40aa75354"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_supplier}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="175" splitType="Stretch">
+			<staticText>
+				<reportElement x="348" y="26" width="207" height="31" uuid="cfe36705-1275-4b75-b4c0-52c8ffdded5c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Mengetahui]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="106" width="207" height="18" uuid="6cef42b9-8606-41d3-bc72-8be2c8b90832"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nur Hasannah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="26" width="207" height="31" uuid="da9433b0-4316-49ee-b423-1db9f8749d01"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Mengetahui]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="119" width="207" height="18" uuid="640e0bde-b525-4aed-9dce-a8150a34c4dd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Owner]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="119" width="207" height="18" uuid="589be25f-d9c4-4b31-89f6-c396162a0ec3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Manajer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="106" width="207" height="18" uuid="2485008d-1815-48ca-9be0-a7031509c014"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Septian Syarif Hidayat]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

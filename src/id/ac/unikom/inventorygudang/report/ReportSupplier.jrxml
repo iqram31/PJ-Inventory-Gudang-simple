@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8f852f7a-0620-4df9-b195-8bec6377d4c9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tanggalHariIni" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     tb_supplier.`kode_supplier` AS tb_supplier_kode_supplier,
+     tb_supplier.`nama` AS tb_supplier_nama,
+     tb_supplier.`alamat` AS tb_supplier_alamat,
+     tb_supplier.`no_hp` AS tb_supplier_no_hp
+FROM
+     `tb_supplier` tb_supplier]]>
+	</queryString>
+	<field name="tb_supplier_kode_supplier" class="java.lang.String"/>
+	<field name="tb_supplier_nama" class="java.lang.String"/>
+	<field name="tb_supplier_alamat" class="java.lang.String"/>
+	<field name="tb_supplier_no_hp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="119" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="119" forecolor="#6699FF" backcolor="#6699FF" uuid="7f36337a-5b49-48b8-924b-1bb9e9b58bc3"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="119" y="67" width="436" height="34" forecolor="#FFFFFF" uuid="4d03c9d9-43e5-476b-b192-a813a33b6a8b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Dialog" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jln. Diponegoro No. 63, Cihaurgeulis, Cibeunying Kaler, Bandung 40112]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="32" width="436" height="34" forecolor="#FFFFFF" uuid="83971508-733b-44ba-b64a-e636f10a36a8"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CV Pusat Dakwah Visual (PUSDAV)]]></text>
+			</staticText>
+			<image>
+				<reportElement x="14" y="17" width="90" height="90" uuid="8d6c05be-9d50-48bd-b761-de254c53397b"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="42" uuid="b09660c0-bc07-444c-a72b-c15bfba50248"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN SUPPLIER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="42" width="71" height="31" uuid="be088fbf-7086-4c40-95e1-f2c5a84b67aa"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cetak          :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="71" y="42" width="116" height="31" uuid="ce781677-3cc9-4fbd-b49c-81ec3528df9c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tanggalHariIni}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<rectangle>
+				<reportElement x="307" y="0" width="248" height="31" uuid="60a3a6d4-ecf7-44cd-8ccb-70b55e46e8ee"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="171" height="31" uuid="f5867032-2f0c-45bd-afc5-223f39819806"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="171" y="0" width="136" height="31" uuid="3b16fbb6-cc2e-4fb9-9ed6-40d33d0987b0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="171" height="31" uuid="1ab83732-eb23-4af7-8cfa-e7b12ff21343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Supplier]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="171" y="0" width="136" height="31" uuid="082440c8-ad00-4e26-909c-acbbb206f7d8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. HP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="307" y="0" width="248" height="31" uuid="9cd860da-8d44-432d-861f-60c89d9625dd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="171" height="20" uuid="c5552037-fc82-414c-ad4e-2ff3aad19bd0"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="307" y="0" width="248" height="20" uuid="4f1bd71e-ed0d-40df-ada4-491f99dd0c20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="171" y="0" width="136" height="20" uuid="7d07c830-a511-4a78-933e-56daf4cd9528"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="171" height="20" uuid="aa941484-cd41-4bc0-8107-5a42ab89e4fe"/>
+				<textElement>
+					<font fontName="Calibri" size="14"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_supplier_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="0" width="248" height="20" uuid="511d4bf5-2d5c-4e21-b38a-da3416dcebed"/>
+				<textElement>
+					<font fontName="Calibri" size="14"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_supplier_alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="0" width="136" height="20" uuid="ec721732-617c-4a1e-932b-00f02ee7bb83"/>
+				<textElement>
+					<font fontName="Calibri" size="14"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_supplier_no_hp}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="126" splitType="Stretch">
+			<staticText>
+				<reportElement x="348" y="108" width="207" height="18" uuid="0949cccb-63c6-42b1-b51e-59fc7605f912"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Manajer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="108" width="207" height="18" uuid="4492d7e2-9a08-4e1c-833f-6bf87aa28c19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Owner]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="15" width="207" height="31" uuid="56cd618e-821b-4de5-bb03-08319eb24798"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Mengetahui]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="95" width="207" height="18" uuid="db24bed6-8661-48f8-97f5-cb79766499f9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Septian Syarif Hidayat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="95" width="207" height="18" uuid="bc3d1753-f498-4517-94f5-78a3424d181f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nur Hasannah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="15" width="207" height="31" uuid="c65b23fb-b027-4bc0-93db-2964e0e8e52c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Mengetahui]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="115f0e4b-172a-4883-b0a8-c19b10d17c99">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="tanggalAwal" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tanggalAkhir" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="logo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tanggalHariIni" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tanggalAwal2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tanggalAkhir2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT tb_penjualan.kode_jual AS "Kode Jual", tb_penjualan.tgl_jual AS "Tanggal Jual", COUNT(tb_detail_penjualan.kode_jual) AS "Jumlah", tb_penjualan.total  AS "Total", (SELECT COUNT(*) FROM tb_penjualan WHERE tb_penjualan.tgl_jual BETWEEN $P{tanggalAwal} AND $P{tanggalAkhir} ) AS "Jumlah_Penjualan"
+FROM tb_penjualan, tb_detail_penjualan
+WHERE tb_penjualan.kode_jual = tb_detail_penjualan.kode_jual AND (tb_penjualan.tgl_jual BETWEEN $P{tanggalAwal} AND $P{tanggalAkhir})
+GROUP BY tb_detail_penjualan.kode_jual ASC]]>
+	</queryString>
+	<field name="Kode Jual" class="java.lang.String"/>
+	<field name="Tanggal Jual" class="java.sql.Date"/>
+	<field name="Jumlah" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Total" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Jumlah_Penjualan" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="119" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="119" forecolor="#6699FF" backcolor="#6699FF" uuid="5ddb2721-f0f4-4e4d-9bea-c42e058a386f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="121" y="66" width="436" height="34" forecolor="#FFFFFF" uuid="39eed51b-e44b-46d1-8c09-7be3827c467e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Dialog" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jln. Diponegoro No. 63, Cihaurgeulis, Cibeunying Kaler, Bandung 40112]]></text>
+			</staticText>
+			<image>
+				<reportElement x="16" y="16" width="90" height="90" uuid="b30e53c9-9260-4ddf-afe2-6a98114f7923"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="121" y="31" width="436" height="34" forecolor="#FFFFFF" uuid="53295443-619f-444d-af3b-b594509e7670"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CV Pusat Dakwah Visual (PUSDAV)]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="135" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="42" uuid="36ef1548-e31e-45ec-a400-a2fbf2f58f22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN PENJUALAN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="218" y="42" width="107" height="31" uuid="41604a73-de6b-48a7-b6a3-5933c7df95a7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tanggalAkhir2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="206" y="42" width="12" height="31" uuid="db092941-18e9-4ac0-acb4-4142376e6928"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="104" width="116" height="31" uuid="ebd99c52-6227-43e5-b553-9d1220cc0937"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tanggalHariIni}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="104" width="130" height="31" uuid="cba21e7c-4627-4755-92dc-da4370aea5af"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cetak                            :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="73" width="130" height="31" uuid="f8e21084-90a7-443d-964d-bc56c7fc82b2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah Penjualan      :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="73" width="116" height="31" uuid="d5538338-b0f3-4617-81f6-d4c340c23e37"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Jumlah_Penjualan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="42" width="76" height="31" uuid="d201716f-43df-4c7c-a7dc-97338c5422f0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tanggalAwal2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="42" width="130" height="31" uuid="bc46261f-e020-4c96-b220-66aebb91b942"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Periode                        :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="138" height="31" uuid="0e8ad3e3-e58a-4166-aecb-5e246ec10bbc"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="138" y="0" width="155" height="31" uuid="6877b700-4f5b-43d9-8176-77389ff5cb3b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="427" y="0" width="128" height="31" uuid="f02e9cb6-3548-498e-95be-686444431e67"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="293" y="0" width="134" height="31" uuid="702ca96f-00ef-420e-91e1-686133becb8d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="138" height="31" uuid="fc12e668-041d-4530-ab65-5726b3ba4bba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Penjualan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="0" width="155" height="31" uuid="10c0dc7a-b982-41b0-b40d-eccb8fc42e4b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal Penjualan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="0" width="134" height="31" uuid="5dab5009-8285-4960-ad05-75766a29e907"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="427" y="0" width="128" height="31" uuid="3ede779b-e0cf-45e0-bb6f-91cd83b34337"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="138" height="20" uuid="8f1bd1cd-c44f-4ccd-9aa5-f0fac094d32c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="138" y="0" width="155" height="20" uuid="b17526b4-cd37-4410-80ba-abe379921076"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="293" y="0" width="134" height="20" uuid="a36bfef3-9a02-43c3-b17e-b706344a7b1b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="427" y="0" width="128" height="20" uuid="32fe84f1-5648-46e7-9baa-8e4fbd5ff2f5"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="138" height="20" uuid="3898055f-7f14-4db9-b699-29a2bdc27305"/>
+				<textElement>
+					<font fontName="Calibri" size="14"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Kode Jual}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="138" y="0" width="155" height="20" uuid="be0fb657-8169-4d01-965f-7a98097451dd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="14"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tanggal Jual}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0">
+				<reportElement x="293" y="0" width="134" height="20" uuid="3882c2d4-95e2-448b-b645-e3af558bf48e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="14"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Jumlah}]]></textFieldExpression>
+			</textField>
+			<textField pattern="Rp #,##0.00">
+				<reportElement x="427" y="0" width="128" height="20" uuid="51d9a199-4aea-4d80-9594-89fc60f986c1"/>
+				<textElement>
+					<font fontName="Calibri" size="14"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="135" splitType="Stretch">
+			<staticText>
+				<reportElement x="348" y="117" width="207" height="18" uuid="1b634b61-8485-4335-9331-b3942a0cccab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Manajer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="117" width="207" height="18" uuid="308dc2b5-bef5-4c10-99a0-8fc6f82b2c69"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Owner]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="24" width="207" height="31" uuid="56d9a010-8d5a-4a9b-94d9-fc730f32af1b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Mengetahui]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="104" width="207" height="18" uuid="c3a544dd-c9cf-4b10-8079-b8c777ad5dac"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Septian Syarif Hidayat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="104" width="207" height="18" uuid="8e8c0213-1af1-420b-9bb3-37cbb96de1e9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nur Hasannah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="24" width="207" height="31" uuid="cdecc036-d740-41de-bd26-7ba68a81d882"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Mengetahui]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
